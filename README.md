@@ -1,2 +1,2 @@
 # Aloof-1.21.1
- A mod for all your sponge-related things!
+A mod that adds new sniffer plants!
