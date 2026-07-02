@@ -1,0 +1,88 @@
+{
+  "variants": {
+    "eaten=0,facing=down": {
+      "model": "aloof:block/pitcher_root_side_eaten0"
+    },
+    "eaten=0,facing=east": {
+      "model": "aloof:block/pitcher_root_side_eaten0",
+      "y": 90
+    },
+    "eaten=0,facing=north": {
+      "model": "aloof:block/pitcher_root_side_eaten0"
+    },
+    "eaten=0,facing=south": {
+      "model": "aloof:block/pitcher_root_side_eaten0",
+      "y": 180
+    },
+    "eaten=0,facing=up": {
+      "model": "aloof:block/pitcher_root_eaten0"
+    },
+    "eaten=0,facing=west": {
+      "model": "aloof:block/pitcher_root_side_eaten0",
+      "y": 270
+    },
+    "eaten=1,facing=down": {
+      "model": "aloof:block/pitcher_root_side_eaten1"
+    },
+    "eaten=1,facing=east": {
+      "model": "aloof:block/pitcher_root_side_eaten1",
+      "y": 90
+    },
+    "eaten=1,facing=north": {
+      "model": "aloof:block/pitcher_root_side_eaten1"
+    },
+    "eaten=1,facing=south": {
+      "model": "aloof:block/pitcher_root_side_eaten1",
+      "y": 180
+    },
+    "eaten=1,facing=up": {
+      "model": "aloof:block/pitcher_root_eaten1"
+    },
+    "eaten=1,facing=west": {
+      "model": "aloof:block/pitcher_root_side_eaten1",
+      "y": 270
+    },
+    "eaten=2,facing=down": {
+      "model": "aloof:block/pitcher_root_side_eaten2"
+    },
+    "eaten=2,facing=east": {
+      "model": "aloof:block/pitcher_root_side_eaten2",
+      "y": 90
+    },
+    "eaten=2,facing=north": {
+      "model": "aloof:block/pitcher_root_side_eaten2"
+    },
+    "eaten=2,facing=south": {
+      "model": "aloof:block/pitcher_root_side_eaten2",
+      "y": 180
+    },
+    "eaten=2,facing=up": {
+      "model": "aloof:block/pitcher_root_eaten2"
+    },
+    "eaten=2,facing=west": {
+      "model": "aloof:block/pitcher_root_side_eaten2",
+      "y": 270
+    },
+    "eaten=3,facing=down": {
+      "model": "aloof:block/pitcher_root_side_eaten3"
+    },
+    "eaten=3,facing=east": {
+      "model": "aloof:block/pitcher_root_side_eaten3",
+      "y": 90
+    },
+    "eaten=3,facing=north": {
+      "model": "aloof:block/pitcher_root_side_eaten3"
+    },
+    "eaten=3,facing=south": {
+      "model": "aloof:block/pitcher_root_side_eaten3",
+      "y": 180
+    },
+    "eaten=3,facing=up": {
+      "model": "aloof:block/pitcher_root_eaten3"
+    },
+    "eaten=3,facing=west": {
+      "model": "aloof:block/pitcher_root_side_eaten3",
+      "y": 270
+    }
+  }
+}

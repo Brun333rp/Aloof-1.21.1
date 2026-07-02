@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "aloof:loofah_sponge"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wet_loofah_sponge": {
+      "conditions": {
+        "items": [
+          {
+            "items": "aloof:wet_loofah_sponge"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wet_loofah_sponge"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "aloof:loofah_sponge"
+    ]
+  }
+}

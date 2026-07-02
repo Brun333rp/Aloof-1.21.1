@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "silphium",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "aloof:silphium_flower"
+    },
+    {
+      "item": "aloof:silphium_flower"
+    },
+    {
+      "item": "aloof:silphium_flower"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "tag": "c:dusts/ash"
+    },
+    {
+      "tag": "c:dusts/ash"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "aloof:healing_salve"
+  }
+}

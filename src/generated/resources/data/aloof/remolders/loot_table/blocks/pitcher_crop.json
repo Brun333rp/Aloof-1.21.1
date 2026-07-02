@@ -1,0 +1,56 @@
+{
+  "molding": "json",
+  "remolder": [
+    {
+      "type": "add",
+      "target": "pools[]",
+      "value": {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:pitcher_crop",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "age": "4",
+                  "half": "lower"
+                }
+              }
+            ],
+            "name": "aloof:pitcher_root"
+          }
+        ],
+        "name": "aloof:pitcher_root",
+        "rolls": 1.0
+      }
+    },
+    {
+      "type": "add",
+      "target": "pools[]",
+      "value": {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "block": "minecraft:pitcher_crop",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "age": "4",
+                  "half": "lower"
+                }
+              }
+            ],
+            "name": "minecraft:pitcher_pod"
+          }
+        ],
+        "name": "aloof:pitcher_pod",
+        "rolls": 1.0
+      }
+    }
+  ],
+  "selector": "minecraft:loot_table/blocks/pitcher_crop"
+}

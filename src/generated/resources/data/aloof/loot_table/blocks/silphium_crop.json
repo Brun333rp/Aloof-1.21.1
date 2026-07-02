@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "aloof:silphium_crop",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "section": "1"
+              }
+            }
+          ],
+          "name": "aloof:silphium_seeds"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "aloof:silphium_crop",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "9",
+                "section": "4"
+              }
+            }
+          ],
+          "name": "aloof:silphium_flower"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "aloof:blocks/silphium_crop"
+}

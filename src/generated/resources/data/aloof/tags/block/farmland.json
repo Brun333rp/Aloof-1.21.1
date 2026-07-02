@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:farmland",
+    {
+      "id": "farmersdelight:rich_soil_farmland",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:resurgent_soil_farmland",
+      "required": false
+    }
+  ]
+}

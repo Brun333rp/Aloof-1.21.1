@@ -1,0 +1,25 @@
+{
+  "values": [
+    "minecraft:enderman",
+    "minecraft:endermite",
+    "minecraft:ender_dragon",
+    "minecraft:shulker",
+    "minecraft:silverfish",
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    "minecraft:creeper",
+    "minecraft:guardian",
+    "minecraft:elder_guardian",
+    "minecraft:blaze",
+    "minecraft:hoglin",
+    "minecraft:piglin_brute",
+    "minecraft:ghast",
+    "minecraft:breeze",
+    "minecraft:polar_bear",
+    "minecraft:iron_golem",
+    "minecraft:snow_golem",
+    "#minecraft:illager",
+    "#minecraft:undead",
+    "#minecraft:raiders"
+  ]
+}

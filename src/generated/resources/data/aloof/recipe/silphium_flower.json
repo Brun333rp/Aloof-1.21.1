@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "aloof:silphium_bundle"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "aloof:silphium_flower"
+  }
+}

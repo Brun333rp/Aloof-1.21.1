@@ -1,0 +1,6 @@
+{
+  "parent": "aloof:block/cross_crop",
+  "textures": {
+    "cross": "aloof:block/soul_torchflower_crop_stage2"
+  }
+}

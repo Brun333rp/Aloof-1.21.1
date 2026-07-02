@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "aloof:block/silphium_bundle_bottom",
+    "side": "aloof:block/silphium_bundle_side",
+    "top": "aloof:block/silphium_bundle_top"
+  }
+}

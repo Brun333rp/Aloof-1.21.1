@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:adventure/avoid_vibration",
+  "criteria": {
+    "use_salve_on_warden": {
+      "trigger": "aloof:use_salve_on_warden"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.aloof.adventure.use_salve_on_warden.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "aloof:healing_salve"
+    },
+    "title": {
+      "translate": "advancements.aloof.adventure.use_salve_on_warden.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_salve_on_warden"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

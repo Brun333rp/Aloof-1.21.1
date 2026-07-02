@@ -1,0 +1,33 @@
+{
+  "item.healing_salve.use": {
+    "sounds": [
+      "item/dye/dye"
+    ],
+    "subtitle": "subtitles.aloof.item.healing_salve.use"
+  },
+  "item.healing_salve.consume": {
+    "sounds": [
+      "block/honeyblock/break1",
+      "block/honeyblock/break2",
+      "block/honeyblock/break3",
+      "block/honeyblock/break4",
+      "block/honeyblock/break5"
+    ],
+    "subtitle": "subtitles.aloof.item.healing_salve.consume"
+  },
+  "block.healing_bomb.explode": {
+    "sounds": [
+      "aloof:block/healing_bomb/explode_0",
+      "aloof:block/healing_bomb/explode_1",
+      "aloof:block/healing_bomb/explode_2",
+      "aloof:block/healing_bomb/explode_3"
+    ],
+    "subtitle": "subtitles.aloof.block.healing_bomb.explode"
+  },
+  "block.healing_bomb.fuse": {
+    "sounds": [
+      "aloof:block/healing_bomb/fuse"
+    ],
+    "subtitle": "subtitles.aloof.block.healing_bomb.fuse"
+  }
+}

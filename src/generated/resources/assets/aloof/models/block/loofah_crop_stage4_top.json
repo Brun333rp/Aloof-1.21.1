@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "aloof:block/loofah_crop_stage4_top"
+  }
+}

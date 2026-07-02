@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "aloof:block/pitcher_root_bundle",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "aloof:block/pitcher_root_bundle",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "aloof:block/pitcher_root_bundle",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "aloof:block/pitcher_root_bundle",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "aloof:block/pitcher_root_bundle"
+    },
+    "facing=west": {
+      "model": "aloof:block/pitcher_root_bundle",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

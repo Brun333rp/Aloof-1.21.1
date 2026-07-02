@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "aloof:block/loofah_gourdbottom"
+    },
+    "half=upper": {
+      "model": "aloof:block/loofah_gourdtop"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "saturated=0": {
+      "model": "aloof:block/pumice_bricks"
+    },
+    "saturated=1": {
+      "model": "aloof:block/soaked_pumice_bricks_stage0"
+    },
+    "saturated=2": {
+      "model": "aloof:block/soaked_pumice_bricks_stage1"
+    },
+    "saturated=3": {
+      "model": "aloof:block/soaked_pumice_bricks_stage2"
+    }
+  }
+}

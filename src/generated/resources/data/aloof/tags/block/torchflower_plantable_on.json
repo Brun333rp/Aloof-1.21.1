@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#aloof:farmland",
+    {
+      "id": "supplementaries:planter",
+      "required": false
+    }
+  ]
+}

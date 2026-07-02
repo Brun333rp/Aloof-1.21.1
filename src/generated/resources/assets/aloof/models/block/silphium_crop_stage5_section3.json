@@ -1,0 +1,6 @@
+{
+  "parent": "aloof:block/cross_crop",
+  "textures": {
+    "cross": "aloof:block/silphium_crop_stage5_section3"
+  }
+}

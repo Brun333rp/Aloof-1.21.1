@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "lit=false,on_farmland=false,soul=false": {
+      "model": "aloof:block/torchflower"
+    },
+    "lit=false,on_farmland=false,soul=true": {
+      "model": "aloof:block/soul_torchflower"
+    },
+    "lit=false,on_farmland=true,soul=false": {
+      "model": "aloof:block/torchflower_crop"
+    },
+    "lit=false,on_farmland=true,soul=true": {
+      "model": "aloof:block/soul_torchflower_crop"
+    },
+    "lit=true,on_farmland=false,soul=false": {
+      "model": "aloof:block/torchflower"
+    },
+    "lit=true,on_farmland=false,soul=true": {
+      "model": "aloof:block/soul_torchflower"
+    },
+    "lit=true,on_farmland=true,soul=false": {
+      "model": "aloof:block/torchflower_crop"
+    },
+    "lit=true,on_farmland=true,soul=true": {
+      "model": "aloof:block/soul_torchflower_crop"
+    }
+  }
+}

@@ -1,13 +1,33 @@
 {
-  "itemGroup.aloof": "Example Mod Tab",
-  "block.aloof.example_block": "Example Block",
-  "item.aloof.example_item": "Example Item",
+  "block.aloof.loofah_crop": "Loofah Crop",
+  "block.aloof.loofah_gourd": "Loofah Gourd",
+  "block.aloof.loofah_sponge": "Loofah Sponge",
+  "block.aloof.wet_loofah_sponge": "Wet Loofah Sponge",
+  "block.aloof.silphium_crop": "Silphium Crop",
+  "block.aloof.silphium_bundle": "Bundle of Silphium",
+  "block.aloof.healing_bomb": "Healing Bomb",
+  "block.aloof.torchflower_crop": "Torchflower Crop",
+  "block.aloof.torchflower": "Torchflower",
+  "block.aloof.pitcher_root": "Pitcher Root",
+  "block.aloof.pitcher_root_bundle": "Bundle of Pitcher Roots",
+  "block.aloof.pumice": "Pumice",
+  "block.aloof.soaked_pumice": "Soaked Pumice",
+  "block.aloof.smooth_pumice": "Smooth Pumice",
+  "block.aloof.polished_pumice": "Polished Pumice",
+  "block.aloof.pumice_bricks": "Pumice Bricks",
 
-  "aloof.configuration.title": "Aloof Configs",
-  "aloof.configuration.section.aloof.common.toml": "Aloof Configs",
-  "aloof.configuration.section.aloof.common.toml.title": "Aloof Configs",
-  "aloof.configuration.items": "Item List",
-  "aloof.configuration.logDirtBlock": "Log Dirt Block",
-  "aloof.configuration.magicNumberIntroduction": "Magic Number Text",
-  "aloof.configuration.magicNumber": "Magic Number"
+  "item.aloof.loofah_seeds": "Loofah Seeds",
+  "item.aloof.silphium_seeds": "Silphium Seeds",
+  "item.aloof.silphium_flower": "Silphium",
+  "item.aloof.healing_salve": "Healing Salve",
+  "item.aloof.healing_bomb_minecart": "Minecart with Healing Bomb",
+  "item.aloof.torchflower_seeds": "Torchflower Seeds",
+
+  "advancements.aloof.adventure.use_salve_on_warden.title": "Calm Emotions",
+  "advancements.aloof.adventure.use_salve_on_warden.description": "Use a Healing Salve on a damaged Warden to calm it down",
+
+  "subtitles.aloof.item.healing_salve.use": "Healing salve applied",
+  "subtitles.aloof.item.healing_salve.consume": "Healing salve consumed fully",
+  "subtitles.aloof.block.healing_bomb.explode": "Healing explosion",
+  "subtitles.aloof.block.healing_bomb.fuse": "Healing bomb fizzes"
 }

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0,soul=false": {
+      "model": "aloof:block/torchflower_crop_stage0"
+    },
+    "age=0,soul=true": {
+      "model": "aloof:block/torchflower_crop_stage0"
+    },
+    "age=1,soul=false": {
+      "model": "aloof:block/torchflower_crop_stage1"
+    },
+    "age=1,soul=true": {
+      "model": "aloof:block/torchflower_crop_stage1"
+    },
+    "age=2,soul=false": {
+      "model": "aloof:block/torchflower_crop_stage2"
+    },
+    "age=2,soul=true": {
+      "model": "aloof:block/soul_torchflower_crop_stage2"
+    },
+    "age=3,soul=false": {
+      "model": "aloof:block/torchflower_crop_stage3"
+    },
+    "age=3,soul=true": {
+      "model": "aloof:block/soul_torchflower_crop_stage3"
+    }
+  }
+}

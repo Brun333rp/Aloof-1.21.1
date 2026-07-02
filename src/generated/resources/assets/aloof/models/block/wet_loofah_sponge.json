@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "aloof:block/wet_loofah_sponge_top",
+    "side": "aloof:block/wet_loofah_sponge"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:moss_block",
+    {
+      "id": "farmersdelight:rich_soil",
+      "required": false
+    }
+  ]
+}

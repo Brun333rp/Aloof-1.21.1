@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "loofah",
+  "ingredient": {
+    "item": "aloof:wet_loofah_sponge"
+  },
+  "result": {
+    "count": 1,
+    "id": "aloof:loofah_sponge"
+  }
+}
