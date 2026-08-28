@@ -3,7 +3,7 @@ package com.syndicatemc.aloof.core.data.server.tags;
 import com.syndicatemc.aloof.core.Aloof;
 import com.syndicatemc.aloof.core.other.AloofConstants;
 import com.syndicatemc.aloof.core.other.tags.AloofBlockTags;
-import net.mehvahdjukaar.supplementaries.reg.ModRegistry;
+import com.teamabnormals.buzzier_bees.core.other.tags.BBBlockTags;
 import net.mehvahdjukaar.supplementaries.reg.ModTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -74,5 +74,7 @@ public class AloofBlockTagsProvider extends BlockTagsProvider {
         this.tag(AloofBlockTags.STORAGE_BLOCKS_SILPHIUM).add(SILPHIUM_BUNDLE.get());
 
         this.tag(ModTags.PLANTER_OFFSET_BLACKLIST).add(SILPHIUM_CROP.get());
+
+        this.tag(BBBlockTags.FLOWER_BLACKLIST).add(TORCHFLOWER.get());
     }
 }

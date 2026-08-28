@@ -84,6 +84,8 @@ dependencies {
     implementation("maven.modrinth:supplementaries:${minecraft_version}-3.6.4-neoforge")
     implementation("maven.modrinth:moonlight:${minecraft_version}-3.0.7-neoforge")
     implementation("maven.modrinth:my-nethers-delight:1.10.2")
+    implementation("maven.modrinth:buzzier-bees:7.0.1")
+    implementation("com.teamabnormals:gallery:${minecraft_version}-2.0.0")
 
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:19.27.0.336")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:19.21.0.247")
