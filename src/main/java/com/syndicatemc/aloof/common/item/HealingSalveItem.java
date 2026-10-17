@@ -7,6 +7,7 @@ import com.syndicatemc.aloof.core.registry.AloofParticleTypes;
 import com.syndicatemc.aloof.core.registry.AloofSoundEvents;
 import com.teamabnormals.blueprint.common.network.particle.SpawnParticlesPayload;
 import com.teamabnormals.blueprint.core.util.NetworkUtil;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -24,7 +25,9 @@ import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HealingSalveItem extends Item {
@@ -79,6 +82,7 @@ public class HealingSalveItem extends Item {
         float maxHealth = entity.getMaxHealth();
         float currentHealth = entity.getHealth();
         float missingHealth = maxHealth - currentHealth;
+        Vec3 pos = player.position();
 
         if (maxHealth != currentHealth && !entity.isDeadOrDying() && !player.getCooldowns().isOnCooldown(stack.getItem()) && !entity.getType().is(AloofEntityTypeTags.HEALING_BLACKLIST)) {
             float amount = Math.min(Math.min(remainingDamage, 5), missingHealth);
@@ -100,6 +104,21 @@ public class HealingSalveItem extends Item {
                 warden.clearAnger(player);
                 AloofCriteriaTriggers.USE_SALVE_ON_WARDEN.get().trigger(serverPlayer);
             }
+
+            if (level instanceof ServerLevel serverLevel) {
+                List<SpawnParticlesPayload.ParticleInstance> pollenParticles = new ArrayList<>();
+                for (int l = 0; l < 10; ++l) {
+                    double x = pos.x + AloofUtils.getVariance(random, 0.2F);
+                    double y = pos.y + AloofUtils.getVariance(random, 0.2F) + player.getEyeHeight();
+                    double z = pos.z + AloofUtils.getVariance(random, 0.2F);
+                    double dx = AloofUtils.getVariance(random, 0.1F) + player.getLookAngle().x * 0.3F;
+                    double dy = AloofUtils.getVariance(random, 0.1F) + player.getLookAngle().y * 0.3F;
+                    double dz = AloofUtils.getVariance(random, 0.1F) + player.getLookAngle().z * 0.3F ;
+                    pollenParticles.add(new SpawnParticlesPayload.ParticleInstance(x, y, z, dx, dy, dz));
+                }
+                NetworkUtil.spawnParticle(serverLevel, AloofParticleTypes.SILPHIUM_POLLEN.get(), pollenParticles);
+            }
+
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;

@@ -38,7 +38,7 @@ public class AloofBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.SWORD_EFFICIENT).add(
                 LOOFAH_CROP.get(), LOOFAH_GOURD.get(),
                 SILPHIUM_CROP.get(),
-                TORCHFLOWER_CROP.get(), TORCHFLOWER.get()
+                LIT_TORCHFLOWER.get()
             );
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
                 PUMICE.get(), SOAKED_PUMICE.get(),
@@ -46,10 +46,10 @@ public class AloofBlockTagsProvider extends BlockTagsProvider {
                 PUMICE_BRICKS.get()
         );
 
-        this.tag(BlockTags.CROPS).add(LOOFAH_CROP.get(), SILPHIUM_CROP.get(), TORCHFLOWER_CROP.get());
-        this.tag(BlockTags.MAINTAINS_FARMLAND).add(SILPHIUM_CROP.get(), TORCHFLOWER_CROP.get(), TORCHFLOWER.get());
-        this.tag(BlockTags.BEE_GROWABLES).add(LOOFAH_CROP.get(), SILPHIUM_CROP.get(), TORCHFLOWER_CROP.get());
-        this.tag(BlockTags.SMALL_FLOWERS).add(TORCHFLOWER.get());
+        this.tag(BlockTags.CROPS).add(LOOFAH_CROP.get(), SILPHIUM_CROP.get());
+        this.tag(BlockTags.MAINTAINS_FARMLAND).add(SILPHIUM_CROP.get());
+        this.tag(BlockTags.BEE_GROWABLES).add(LOOFAH_CROP.get(), SILPHIUM_CROP.get());
+        this.tag(BlockTags.SMALL_FLOWERS).add(LIT_TORCHFLOWER.get());
 
         this.tag(AloofBlockTags.FARMLAND)
                 .add(Blocks.FARMLAND)
@@ -63,18 +63,11 @@ public class AloofBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.FARMLAND)
                 .addOptional(ResourceLocation.fromNamespaceAndPath(AloofConstants.FARMERS_DELIGHT, "rich_soil_farmland"))
                 .addOptional(ResourceLocation.fromNamespaceAndPath(AloofConstants.SUPPLEMENTARIES, "planter"));
-        this.tag(AloofBlockTags.TORCHFLOWER_PLANTABLE_ON)
-                .addTags(AloofBlockTags.FARMLAND)
-                .addOptional(ResourceLocation.fromNamespaceAndPath(AloofConstants.SUPPLEMENTARIES, "planter"));
-        this.tag(AloofBlockTags.TORCHFLOWER_PLACEABLE_ON)
-                .addTags(BlockTags.DIRT)
-                .addTags(AloofBlockTags.TORCHFLOWER_PLANTABLE_ON)
-                .addTags(BlockTags.SOUL_FIRE_BASE_BLOCKS);
 
         this.tag(AloofBlockTags.STORAGE_BLOCKS_SILPHIUM).add(SILPHIUM_BUNDLE.get());
 
         this.tag(ModTags.PLANTER_OFFSET_BLACKLIST).add(SILPHIUM_CROP.get());
 
-        this.tag(BBBlockTags.FLOWER_BLACKLIST).add(TORCHFLOWER.get());
+        this.tag(BBBlockTags.FLOWER_BLACKLIST).add(LIT_TORCHFLOWER.get());
     }
 }

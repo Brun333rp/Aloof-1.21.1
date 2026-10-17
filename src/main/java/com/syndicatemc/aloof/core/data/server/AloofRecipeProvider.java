@@ -80,14 +80,6 @@ public class AloofRecipeProvider extends BlueprintRecipeProvider {
                 .requires(Items.MINECART)
                 .unlockedBy("has_healing_bomb", has(AloofBlocks.HEALING_BOMB)).save(output);
 
-        ShapelessRecipeBuilder.shapeless(MISC, Items.ORANGE_DYE)
-                .requires(Ingredient.of(AloofBlocks.TORCHFLOWER))
-                .group("torchflower")
-                .unlockedBy("has_torchflower", has(AloofBlocks.TORCHFLOWER)).save(output, Aloof.location(getItemName(Items.ORANGE_DYE) + "_from_" + getItemName(AloofBlocks.TORCHFLOWER)));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(AloofBlocks.TORCHFLOWER), KNIVES, Items.ORANGE_DYE, 2)
-                .addResultWithChance(AloofItems.TORCHFLOWER_SEEDS, 0.2F)
-                .build(output.withConditions(new ModLoadedCondition(AloofConstants.FARMERS_DELIGHT)), Aloof.location("cutting/" + getItemName(AloofBlocks.TORCHFLOWER)));
-
         this.storageRecipes(output, MISC, AloofItems.SILPHIUM_FLOWER, MISC, AloofBlocks.SILPHIUM_BUNDLE);
 
         ShapedRecipeBuilder.shaped(MISC, AloofBlocks.PITCHER_ROOT_BUNDLE)

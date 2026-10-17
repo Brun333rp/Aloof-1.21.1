@@ -10,9 +10,6 @@ public class AloofBlockTags {
     public static final TagKey<Block> LOOFAH_PLANTABLE_ON = modTag("loofah_plantable_on");
     public static final TagKey<Block> SILPHIUM_PLANTABLE_ON = modTag("silphium_plantable_on");
 
-    public static final TagKey<Block> TORCHFLOWER_PLANTABLE_ON = modTag("torchflower_plantable_on");
-    public static final TagKey<Block> TORCHFLOWER_PLACEABLE_ON = modTag("torchflower_placeable_on");
-
     public static final TagKey<Block> FARMLAND = modTag("farmland");
 
     public static final TagKey<Block> STORAGE_BLOCKS_SILPHIUM = commonTag("storage_blocks/silphium");

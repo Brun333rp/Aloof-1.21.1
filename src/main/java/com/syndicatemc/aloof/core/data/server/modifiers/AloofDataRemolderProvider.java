@@ -40,7 +40,6 @@ public class AloofDataRemolderProvider extends RemolderProvider {
         this.entry(snifferDigging)
                 .path(snifferDigging)
                 .remolder(sequence(
-                        replace(target("pools[0].entries[0]"), value(LootItem.lootTableItem(AloofItems.TORCHFLOWER_SEEDS).build(), LootPoolEntries.CODEC)),
                         addEntry(0, LootItem.lootTableItem(AloofItems.LOOFAH_SEEDS).build()),
                         addEntry(0, LootItem.lootTableItem(AloofItems.SILPHIUM_SEEDS).build())
                 ));

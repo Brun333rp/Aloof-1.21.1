@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.syndicatemc.aloof.common.block.PitcherRootBlock;
 import com.syndicatemc.aloof.common.block.SilphiumCropBlock;
 import com.syndicatemc.aloof.core.Aloof;
-import com.syndicatemc.aloof.core.registry.AloofBlocks;
+import com.syndicatemc.aloof.core.registry.AloofEntityTypes;
 import com.syndicatemc.aloof.core.registry.AloofItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup.Provider;
@@ -12,10 +12,14 @@ import net.minecraft.core.WritableRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.util.ProblemReporter;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -41,7 +45,8 @@ import static com.syndicatemc.aloof.core.registry.AloofBlocks.*;
 public class AloofLootTableProvider extends LootTableProvider {
     public AloofLootTableProvider(PackOutput output, CompletableFuture<Provider> provider) {
         super(output, BuiltInLootTables.all(), ImmutableList.of(
-                new LootTableProvider.SubProviderEntry(AloofBlockLoot::new, LootContextParamSets.BLOCK)
+                new LootTableProvider.SubProviderEntry(AloofBlockLoot::new, LootContextParamSets.BLOCK),
+                new LootTableProvider.SubProviderEntry(AloofEntityLoot::new, LootContextParamSets.ENTITY)
         ), provider);
     }
 
@@ -61,7 +66,6 @@ public class AloofLootTableProvider extends LootTableProvider {
                     LOOFAH_GOURD, LOOFAH_SPONGE, WET_LOOFAH_SPONGE,
                     SILPHIUM_BUNDLE, HEALING_BOMB,
 
-                    TORCHFLOWER,
                     PITCHER_ROOT_BUNDLE,
 
                     PUMICE, SOAKED_PUMICE,
@@ -73,8 +77,7 @@ public class AloofLootTableProvider extends LootTableProvider {
 
             loofahCropLootTable(LOOFAH_CROP);
             silphiumCropLootTable(SILPHIUM_CROP);
-            this.dropOther(TORCHFLOWER_CROP.get(), AloofItems.TORCHFLOWER_SEEDS);
-            this.dropPottedContents(POTTED_TORCHFLOWER.get());
+            this.dropOther(LIT_TORCHFLOWER.get(), Items.TORCHFLOWER);
             pitcherRootLootTable(PITCHER_ROOT);
         }
 
@@ -118,6 +121,29 @@ public class AloofLootTableProvider extends LootTableProvider {
                                     .setProperties(StatePropertiesPredicate.Builder.properties()
                                             .hasProperty(PitcherRootBlock.EATEN, 0))))))
             );
+        }
+    }
+
+    private static class AloofEntityLoot extends EntityLootSubProvider {
+        protected AloofEntityLoot(Provider provider) {
+            super(FeatureFlags.REGISTRY.allFlags(), provider);
+        }
+
+        @Override
+        public void generate() {
+            this.add(AloofEntityTypes.HARVEST_CHILD.get(), LootTable.lootTable()
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(PITCHER_ROOT)))
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.PITCHER_POD))));
+        }
+
+        @Override
+        public Stream<EntityType<?>> getKnownEntityTypes() {
+            return BuiltInRegistries.ENTITY_TYPE.stream().filter(entity -> BuiltInRegistries.ENTITY_TYPE.getKey(entity).getNamespace().equals(Aloof.MOD_ID));
+        }
+
+        @Override
+        protected boolean canHaveLootTable(EntityType<?> entityType) {
+            return entityType.getCategory() != MobCategory.MISC;
         }
     }
 }

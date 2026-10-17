@@ -1,0 +1,46 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "aloof:loofah_crop": {
+            "conditions": {
+              "location": [
+                {
+                  "block": "aloof:loofah_crop",
+                  "condition": "minecraft:block_state_property"
+                }
+              ]
+            },
+            "trigger": "minecraft:placed_block"
+          },
+          "aloof:silphium_crop": {
+            "conditions": {
+              "location": [
+                {
+                  "block": "aloof:silphium_crop",
+                  "condition": "minecraft:block_state_property"
+                }
+              ]
+            },
+            "trigger": "minecraft:placed_block"
+          }
+        },
+        "indexed_requirements": [
+          {
+            "index": 0,
+            "replace": false,
+            "requirements": [
+              "aloof:loofah_crop",
+              "aloof:silphium_crop"
+            ]
+          }
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:husbandry/plant_seed"
+}

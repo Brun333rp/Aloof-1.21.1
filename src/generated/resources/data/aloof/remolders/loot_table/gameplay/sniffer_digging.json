@@ -2,14 +2,6 @@
   "molding": "json",
   "remolder": [
     {
-      "type": "replace",
-      "target": "pools[0].entries[0]",
-      "value": {
-        "type": "minecraft:item",
-        "name": "aloof:torchflower_seeds"
-      }
-    },
-    {
       "type": "add",
       "target": "pools[0].entries[]",
       "value": {

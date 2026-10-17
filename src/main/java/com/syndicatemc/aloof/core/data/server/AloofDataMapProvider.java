@@ -29,9 +29,6 @@ public class AloofDataMapProvider extends DataMapProvider {
                 .add(SILPHIUM_SEEDS, new Compostable(0.3F), false)
                 .add(SILPHIUM_BUNDLE.getId(), new Compostable(0.85F), false)
 
-                .add(TORCHFLOWER.getId(), new Compostable(0.85F), false)
-                .add(TORCHFLOWER_SEEDS, new Compostable(0.3F), false)
-
                 .add(PITCHER_ROOT.getId(), new Compostable(0.65F), false)
                 .add(PITCHER_ROOT_BUNDLE.getId(), new Compostable(0.85F), false);
     }

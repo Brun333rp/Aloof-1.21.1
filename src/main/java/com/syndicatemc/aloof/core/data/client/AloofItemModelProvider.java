@@ -19,8 +19,6 @@ public class AloofItemModelProvider extends BlueprintItemModelProvider {
                 LOOFAH_SEEDS, SILPHIUM_SEEDS,
                 SILPHIUM_FLOWER,
 
-                TORCHFLOWER_SEEDS,
-
                 HEALING_SALVE, HEALING_BOMB_MINECART
         }) {
             this.basicItem(item.get());

@@ -1,23 +1,21 @@
 package com.syndicatemc.aloof.core.data.client;
 
-import com.syndicatemc.aloof.common.block.NewTorchflowerBlock;
 import com.syndicatemc.aloof.common.block.PitcherRootBlock;
 import com.syndicatemc.aloof.common.block.PumiceBricksBlock;
 import com.syndicatemc.aloof.common.block.SilphiumCropBlock;
 import com.syndicatemc.aloof.core.Aloof;
 import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import static com.syndicatemc.aloof.core.registry.AloofBlocks.*;
 
@@ -45,11 +43,10 @@ public class AloofBlockStateProvider extends BlueprintBlockStateProvider {
         loofahCropBlock(LOOFAH_CROP);
         silphiumCropBlock(SILPHIUM_CROP);
         this.directionalBlock(SILPHIUM_BUNDLE);
-        torchflowerBlock(TORCHFLOWER);
-        torchflowerCropBlock(TORCHFLOWER_CROP);
-        this.simpleBlock(POTTED_TORCHFLOWER.get(), models().singleTexture(name(POTTED_TORCHFLOWER.get()), ResourceLocation.withDefaultNamespace("block/flower_pot_cross"), "plant", Aloof.location("block/torchflower")));
         pitcherRootBlock(PITCHER_ROOT);
         this.directionalBlock(PITCHER_ROOT_BUNDLE);
+
+        this.crossBlockNoItem(LIT_TORCHFLOWER);
 
         this.cubeBottomTopBlock(HEALING_BOMB);
 
@@ -96,7 +93,7 @@ public class AloofBlockStateProvider extends BlueprintBlockStateProvider {
             int section = state.getValue(SilphiumCropBlock.SECTION);
             int age = state.getValue(SilphiumCropBlock.AGE);
             ModelFile section1 = silphiumCropModel(Math.min(age, 3), 1);
-            ModelFile section2 = silphiumCropModel(Math.max(Math.min(age, 6), 3), 2);
+            ModelFile section2 = silphiumCropModel(Math.clamp(age, 3, 6), 2);
             ModelFile section3 = silphiumCropModel(Math.max(age, 5), 3);
             ModelFile section4 = silphiumCropModel(Math.max(age, 8), 4);
 
@@ -113,42 +110,6 @@ public class AloofBlockStateProvider extends BlueprintBlockStateProvider {
 
     private ModelFile silphiumCropModel(int stage, int section) {
         return this.models().withExistingParent(name(SILPHIUM_CROP.get()) + "_stage" + stage + "_section" + section, Aloof.location("block/cross_crop")).texture("cross", Aloof.location("block/" + name(SILPHIUM_CROP.get()) + "_stage" + stage + "_section" + section));
-    }
-
-    private void torchflowerBlock(DeferredBlock<?> torchflowerObject) {
-        Block torchflower = torchflowerObject.get();
-
-        this.getVariantBuilder(torchflower).forAllStates(state -> {
-            boolean onFarmland = state.getValue(NewTorchflowerBlock.ON_FARMLAND);
-            boolean isSoul = state.getValue(NewTorchflowerBlock.SOUL);
-
-            ModelFile model = onFarmland ?
-                    this.models().withExistingParent((isSoul ? "soul_" : "") + name(torchflower) + "_crop", Aloof.location("block/cross_crop")).texture("cross", Aloof.location( "block/" + (isSoul ? "soul_" : "") + name(torchflower))) :
-                    this.models().cross((isSoul ? "soul_" : "") + name(torchflower), Aloof.location("block/" + (isSoul ? "soul_" : "") + name(torchflower)));
-
-            ConfiguredModel.Builder<?> builder = ConfiguredModel.builder().modelFile(model);
-
-            return builder.build();
-        });
-
-        this.generatedItem(torchflower, "block");
-    }
-
-    private void torchflowerCropBlock(DeferredBlock<?> torchflowerObject) {
-        Block torchflower = torchflowerObject.get();
-
-        this.getVariantBuilder(torchflower).forAllStates(state -> {
-            int age = state.getValue(BlockStateProperties.AGE_3);
-            boolean isSoul = state.getValue(NewTorchflowerBlock.SOUL);
-
-            String name = (isSoul && age > 1 ? "soul_" : "") + name(torchflower) + "_stage" + age;
-
-            ModelFile model = this.models().withExistingParent(name, Aloof.location("block/cross_crop")).texture("cross", Aloof.location( "block/" + name));
-
-            ConfiguredModel.Builder<?> builder = ConfiguredModel.builder().modelFile(model);
-
-            return builder.build();
-        });
     }
 
     private void pitcherRootBlock(DeferredBlock<?> pitcherObject) {
@@ -194,6 +155,10 @@ public class AloofBlockStateProvider extends BlueprintBlockStateProvider {
         });
         this.simpleBlockItem(block, baseModel);
     }
+
+    public void crossBlockNoItem(DeferredHolder<Block, ?> cross) {
+        this.simpleBlock(cross.get(), models().cross(name(cross.get()), blockTexture(cross.get())));
+}
 
     private ModelFile pumiceBrickModel(int stage, boolean isSaturated) {
         return isSaturated ?

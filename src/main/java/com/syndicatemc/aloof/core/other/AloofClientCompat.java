@@ -18,7 +18,9 @@ public class AloofClientCompat {
     }
     public static void registerRenderLayers() {
         for (DeferredBlock<?> block : new DeferredBlock[]{
-                LOOFAH_CROP, SILPHIUM_CROP, TORCHFLOWER, TORCHFLOWER_CROP, POTTED_TORCHFLOWER, PITCHER_ROOT
+                LOOFAH_CROP, SILPHIUM_CROP, PITCHER_ROOT,
+
+                LIT_TORCHFLOWER
         }) {
             ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout());
         }

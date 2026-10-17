@@ -25,17 +25,6 @@
               ]
             },
             "trigger": "minecraft:placed_block"
-          },
-          "aloof:torchflower": {
-            "conditions": {
-              "location": [
-                {
-                  "block": "aloof:torchflower_crop",
-                  "condition": "minecraft:block_state_property"
-                }
-              ]
-            },
-            "trigger": "minecraft:placed_block"
           }
         },
         "indexed_requirements": [
@@ -44,8 +33,7 @@
             "replace": false,
             "requirements": [
               "aloof:loofah_crop",
-              "aloof:silphium_crop",
-              "aloof:torchflower"
+              "aloof:silphium_crop"
             ]
           }
         ],

@@ -17,10 +17,16 @@ public class AloofAdvancementModifierProvider extends AdvancementModifierProvide
 
     @Override
     protected void registerEntries(Provider provider) {
-        this.entry("husbandry/plant_any_sniffer_seed").selects("husbandry/plant_any_sniffer_seed").addModifier(CriteriaModifier.builder(this.modId)
-                .addCriterion("torchflower", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(AloofBlocks.TORCHFLOWER_CROP.get()))
+        String plantSnifferSeed = "husbandry/plant_any_sniffer_seed";
+        this.entry(plantSnifferSeed).selects(plantSnifferSeed).addModifier(CriteriaModifier.builder(this.modId)
                 .addCriterion("loofah_crop", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(AloofBlocks.LOOFAH_CROP.get()))
                 .addCriterion("silphium_crop", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(AloofBlocks.SILPHIUM_CROP.get()))
-                .addIndexedRequirements(0, false, "loofah_crop", "silphium_crop", "torchflower").build());
+                .addIndexedRequirements(0, false, "loofah_crop", "silphium_crop").build());
+
+        String plantSeed = "husbandry/plant_seed";
+        this.entry(plantSeed).selects(plantSeed).addModifier(CriteriaModifier.builder(this.modId)
+                .addCriterion("loofah_crop", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(AloofBlocks.LOOFAH_CROP.get()))
+                .addCriterion("silphium_crop", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(AloofBlocks.SILPHIUM_CROP.get()))
+                .addIndexedRequirements(0, false, "loofah_crop", "silphium_crop").build());
     }
 }

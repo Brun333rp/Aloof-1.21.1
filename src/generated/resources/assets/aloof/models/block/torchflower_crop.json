@@ -1,6 +1,0 @@
-{
-  "parent": "aloof:block/cross_crop",
-  "textures": {
-    "cross": "aloof:block/torchflower"
-  }
-}

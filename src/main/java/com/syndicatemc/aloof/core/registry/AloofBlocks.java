@@ -7,6 +7,7 @@ import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.core.Direction;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -29,9 +30,7 @@ public class AloofBlocks {
     public static final DeferredBlock<Block> SILPHIUM_BUNDLE = BLOCKS.createBlock("silphium_bundle", () -> new BlueprintDirectionalBlock(AloofProperties.SILPHIUM_BUNDLE));
     public static final DeferredBlock<Block> HEALING_BOMB = BLOCKS.createBlock("healing_bomb", () -> new HealingBombBlock(AloofProperties.HEALING_BOMB));
 
-    public static final DeferredBlock<Block> TORCHFLOWER = BLOCKS.createBlock("torchflower", () -> new NewTorchflowerBlock(AloofProperties.TORCHFLOWER));
-    public static final DeferredBlock<Block> TORCHFLOWER_CROP = BLOCKS.createBlockNoItem("torchflower_crop", () -> new NewTorchflowerCropBlock(AloofProperties.TORCHFLOWER_CROP));
-    public static final DeferredBlock<Block> POTTED_TORCHFLOWER = BLOCKS.createBlock("potted_torchflower", () -> new FlowerPotBlock(TORCHFLOWER.get(), PropertyUtil.flowerPot()));
+    public static final DeferredBlock<Block> LIT_TORCHFLOWER = BLOCKS.createBlockNoItem("lit_torchflower", () -> new LitTorchflowerBlock(AloofProperties.LIT_TORCHFLOWER));
 
     public static final DeferredBlock<Block> PITCHER_ROOT = BLOCKS.createBlock("pitcher_root", () -> new PitcherRootBlock(AloofProperties.PITCHER_ROOT));
     public static final DeferredBlock<Block> PITCHER_ROOT_BUNDLE = BLOCKS.createBlock("pitcher_root_bundle", () -> new BlueprintDirectionalBlock(AloofProperties.PITCHER_ROOT_BUNDLE));
@@ -56,8 +55,7 @@ public class AloofBlocks {
         public static final Properties SILPHIUM_BUNDLE = Properties.ofFullCopy(Blocks.HAY_BLOCK).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN);
         public static final Properties HEALING_BOMB = Properties.ofFullCopy(Blocks.TNT).mapColor(MapColor.TERRACOTTA_YELLOW);
 
-        public static final Properties TORCHFLOWER = Properties.ofFullCopy(Blocks.TORCHFLOWER).lightLevel(state -> state.getValue(NewTorchflowerBlock.LIT) ? state.getValue(NewTorchflowerBlock.SOUL) ? 10 : 15 : 0);
-        public static final Properties TORCHFLOWER_CROP = Properties.ofFullCopy(Blocks.TORCHFLOWER_CROP).offsetType(BlockBehaviour.OffsetType.XZ);
+        public static final Properties LIT_TORCHFLOWER = Properties.ofFullCopy(Blocks.TORCHFLOWER).lightLevel(state -> 15);
 
         public static final Properties PITCHER_ROOT = Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).mapColor(MapColor.TERRACOTTA_WHITE).destroyTime(1.0F);
         public static final Properties PITCHER_ROOT_BUNDLE = Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).mapColor(MapColor.TERRACOTTA_WHITE);
@@ -66,7 +64,6 @@ public class AloofBlocks {
     public static void setupTabEditors() {
         CreativeModeTabContentsPopulator.mod(Aloof.MOD_ID)
                 .tab(NATURAL_BLOCKS)
-                .addItemsAfter(of(Items.LILY_OF_THE_VALLEY), TORCHFLOWER)
                 .addItemsAfter(of(Items.JACK_O_LANTERN),
                         LOOFAH_GOURD,
                         LOOFAH_SPONGE,

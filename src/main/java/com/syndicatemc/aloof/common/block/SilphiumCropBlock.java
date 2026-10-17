@@ -5,8 +5,12 @@ import com.syndicatemc.aloof.core.data.server.tags.AloofBlockTagsProvider;
 import com.syndicatemc.aloof.core.other.AloofUtils;
 import com.syndicatemc.aloof.core.other.tags.AloofBlockTags;
 import com.syndicatemc.aloof.core.registry.AloofItems;
+import com.syndicatemc.aloof.core.registry.AloofParticleTypes;
+import com.teamabnormals.blueprint.common.network.particle.SpawnParticlesPayload;
+import com.teamabnormals.blueprint.core.util.NetworkUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -34,6 +38,9 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.common.ItemAbilities;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SilphiumCropBlock extends BushBlock implements BonemealableBlock {
     public static final MapCodec<SilphiumCropBlock> CODEC = simpleCodec(SilphiumCropBlock::new);
@@ -201,6 +208,8 @@ public class SilphiumCropBlock extends BushBlock implements BonemealableBlock {
         BlockState belowState = level.getBlockState(pos.below());
         BlockState belowState1 = level.getBlockState(pos.below(2));
         BlockState belowState2 = level.getBlockState(pos.below(3));
+        Vec3 offset = state.getOffset(level, pos);
+        RandomSource random = level.random;
 
         if (stack.canPerformAction(ItemAbilities.SHEARS_HARVEST) && age == 9 && section == 4) {
             level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.1F + AloofUtils.getVariance(level.random, 0.1F));
@@ -210,9 +219,33 @@ public class SilphiumCropBlock extends BushBlock implements BonemealableBlock {
             level.destroyBlock(pos, true);
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+            if (level instanceof ServerLevel serverLevel) {
+                List<SpawnParticlesPayload.ParticleInstance> pollenParticles = new ArrayList<>();
+                for (int l = 0; l < 10; ++l) {
+                    double x = pos.getX() + 0.5D + AloofUtils.getVariance(random, 0.2F) + offset.x;
+                    double y = pos.getY() + 0.25D + AloofUtils.getVariance(random, 0.2F);
+                    double z = pos.getZ() + 0.5D + AloofUtils.getVariance(random, 0.2F) + offset.z;
+                    double dx = AloofUtils.getVariance(random, 0.1F);
+                    double dy = AloofUtils.getVariance(random, 0.1F);
+                    double dz = AloofUtils.getVariance(random, 0.1F);
+                    pollenParticles.add(new SpawnParticlesPayload.ParticleInstance(x, y, z, dx, dy, dz));
+                }
+                NetworkUtil.spawnParticle(serverLevel, AloofParticleTypes.SILPHIUM_POLLEN.get(), pollenParticles);
+            }
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         } else {
             return super.useItemOn(stack, state, level, pos, player, hand, result);
+        }
+    }
+
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        Vec3 offset = state.getOffset(level, pos);
+        if (state.getValue(AGE).equals(9) && state.getValue(SECTION).equals(4)) {
+            double x = pos.getX() + 0.5D + AloofUtils.getVariance(random, 0.2F) + offset.x;
+            double y = pos.getY() + 0.25D + AloofUtils.getVariance(random, 0.2F);
+            double z = pos.getZ() + 0.5D + AloofUtils.getVariance(random, 0.2F) + offset.z;
+            level.addParticle(AloofParticleTypes.SILPHIUM_POLLEN.get(), x, y, z, 0.0D, 0.0D, 0.0D);
         }
     }
 }

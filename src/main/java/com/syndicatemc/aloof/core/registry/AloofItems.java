@@ -24,12 +24,9 @@ public class AloofItems {
     public static final DeferredItem<Item> HEALING_SALVE = ITEMS.createItem("healing_salve", () -> new HealingSalveItem(new Item.Properties().durability(30)));
     public static final DeferredItem<Item> HEALING_BOMB_MINECART = ITEMS.createItem("healing_bomb_minecart", () -> new HealingBombMinecartItem(new Item.Properties().stacksTo(1)));
 
-    public static final DeferredItem<Item> TORCHFLOWER_SEEDS = ITEMS.createItem("torchflower_seeds", () -> new ItemNameBlockItem(AloofBlocks.TORCHFLOWER_CROP.get(), new Item.Properties()));
-
     public static void setupTabEditors() {
         CreativeModeTabContentsPopulator.mod(Aloof.MOD_ID)
                 .tab(NATURAL_BLOCKS)
-                .addItemsBefore(of(Items.PITCHER_POD), TORCHFLOWER_SEEDS)
                 .addItemsAfter(of(Items.PITCHER_POD), LOOFAH_SEEDS, SILPHIUM_SEEDS)
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(of(Items.TNT_MINECART), HEALING_BOMB_MINECART)
