@@ -1,0 +1,35 @@
+{
+  "block.aloof.loofah_crop": "Plantio de Lufa",
+  "block.aloof.loofah_gourd": "Pepônio de Lufa",
+  "block.aloof.loofah_sponge": "Bucha Vegetal",
+  "block.aloof.wet_loofah_sponge": "Bucha Vegetal Úmida",
+  "block.aloof.silphium_crop": "Plantio de Sílfio",
+  "block.aloof.silphium_bundle": "Fardo de Sílfio",
+  "block.aloof.healing_bomb": "Bomba de Cura",
+  "block.aloof.torchflower_crop": "Plantio de Plantocha",
+  "block.aloof.torchflower": "Plantocha",
+  "block.aloof.pitcher_root": "Raiz de Planta Ancestral",
+  "block.aloof.pitcher_root_bundle": "Fardo de Raízes de Planta Ancestral",
+  "block.aloof.pumice": "Pedra-Pomes",
+  "block.aloof.soaked_pumice": "Pedra-Pomes Saturada",
+  "block.aloof.smooth_pumice": "Pedra-Pomes Lisa",
+  "block.aloof.polished_pumice": "Pedra-Pomes Polida",
+  "block.aloof.pumice_bricks": "Tijolos de Pedra-Pomes",
+
+  "item.aloof.loofah_seeds": "Sementes de Lufa",
+  "item.aloof.silphium_seeds": "Sementes de Sílfio",
+  "item.aloof.silphium_flower": "Sílfio",
+  "item.aloof.healing_salve": "Bálsamo de Cura",
+  "item.aloof.healing_bomb_minecart": "Carrinho de Mina com Bomba de Cura",
+  "item.aloof.torchflower_seeds": "Sementes de Plantocha",
+
+  "entity.aloof.harvest_child": "Criançafra",
+
+  "advancements.aloof.adventure.use_salve_on_warden.title": "Acalmando os ânimos",
+  "advancements.aloof.adventure.use_salve_on_warden.description": "Use uma Bálsamo de Cura em um Defensor ferido para acalmá-lo",
+
+  "subtitles.aloof.item.healing_salve.use": "Bálsamo de Cura aplicado",
+  "subtitles.aloof.item.healing_salve.consume": "Bálsamo de Cura consumido",
+  "subtitles.aloof.block.healing_bomb.explode": "Explosão de cura",
+  "subtitles.aloof.block.healing_bomb.fuse": "Bomba de Cura acionada"
+}
